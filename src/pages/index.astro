@@ -1,11 +1,79 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import htmlParser from "../utils/htmlParser";
+import { Icon } from "astro-icon/components";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const landingPageRes = await fetch(
+  "http://elevate-studios.local/wp-json/wp/v2/pages/8"
+);
+const landingPage = await landingPageRes.json();
+
+const services = [
+  {
+    name: "Podcast Production",
+    description:
+      "From concept development to final editing, we help bring your voice to life. Whether you’re a seasoned podcaster or just starting out, we provide the tools and expertise you need to create engaging audio and video content.",
+    icon: "mdi:podcast",
+    url: "/services/podcast-production",
+  },
+  {
+    name: "Video Production",
+    description:
+      "Our team specializes in crafting visually compelling stories that resonate with audiences. We work with you to create videos that capture your vision, whether for promotional content, educational purposes, or community engagement.",
+    icon: "mdi:video",
+    url: "/services/video-production",
+  },
+];
 ---
 
 <Layout>
-	<Welcome />
+  <section>
+    <div
+      class="max-w-screen-2xl mx-auto w-full h-screen flex items-center justify-center flex-col"
+    >
+      <div class="flex flex-col gap-2 items-center text-center text-8xl">
+        <h1>Inspire</h1>
+        <h1>Create</h1>
+        <h1>Innovate</h1>
+      </div>
+    </div>
+  </section>
+  <section class="bg-secondary py-16">
+    <div class="max-w-screen-xl mx-auto flex flex-col gap-4 px-4">
+      <h1 class="text-6xl font-bold">Welcome to <br /> Elevate Studios</h1>
+      <p class="max-w-3xl text-white">
+        Based in the heart of Tamaki Makaurau, Elevate Studios is your go-to
+        media company specializing in high-quality podcast and video production.
+        We believe in the power of storytelling to inspire and connect
+        communities, and that's why every project we undertake is driven by our
+        commitment to making a positive impact.
+      </p>
+      <a href="/about-us" class="btn btn-lg w-fit btn-accent">Learn More</a>
+    </div>
+  </section>
+  <section>
+    <div
+      class="max-w-screen-2xl mx-auto flex flex-col items-center gap-8 py-32 px-4"
+    >
+      <h1 class="text-center text-4xl max-w-xl w-full">
+        We produce the media so that you can focus on what matters
+      </h1>
+      <div class="flex flex-col gap-4 max-w-xs mx-auto">
+        {
+          services.map((service) => (
+            <a
+              href={service.url}
+              class={`group hover:bg-accent transition-colors w-full p-4 text-4xl overflow-hidden text-center uppercase relative bg-primary`}
+            >
+              <h1 class="z-10 relative">{service.name}</h1>
+              <Icon
+                name={service.icon}
+                class="text-[200px] group-hover:opacity-90 opacity-50 duration-0 text-white absolute -bottom-8 -right-8 rotate-45"
+              />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </Layout>
