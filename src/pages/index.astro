@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import htmlParser from "../utils/htmlParser";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
 // const landingPageRes = await fetch(
 //   "http://elevate-studios.local/wp-json/wp/v2/pages/8"
@@ -22,6 +23,34 @@ const services = [
       "Our team specializes in crafting visually compelling stories that resonate with audiences. We work with you to create videos that capture your vision, whether for promotional content, educational purposes, or community engagement.",
     icon: "mdi:video",
     url: "/services/video-production",
+  },
+];
+
+import outsoleLogo from "../assets/images/outsole.png";
+import kumeteLogo from "../assets/images/kumete.png";
+import elevateLogo from "../assets/images/elevate.png";
+
+const programs = [
+  {
+    name: "Outsole",
+    description:
+      "Empowering local artists and creators through workshops and mentorship opportunities.",
+    image: outsoleLogo,
+    url: "/programs/outsole",
+  },
+  {
+    name: "Kumete",
+    description:
+      "Supporting sustainable practices in our community through educational initiatives and collaborative projects.",
+    image: kumeteLogo,
+    url: "/programs/kumete",
+  },
+  {
+    name: "Elevate",
+    description:
+      "Providing resources and platforms for underrepresented voices, ensuring everyone has the opportunity to share their story.",
+    image: elevateLogo,
+    url: "/programs/elevate",
   },
 ];
 ---
@@ -53,7 +82,7 @@ const services = [
   </section>
   <section>
     <div
-      class="max-w-screen-2xl mx-auto flex flex-col items-center gap-8 py-32 px-4"
+      class="max-w-screen-2xl mx-auto flex flex-col items-center gap-16 py-32 px-4"
     >
       <h1 class="text-center text-4xl max-w-xl w-full">
         We produce the media so that you can focus on what matters
@@ -70,6 +99,46 @@ const services = [
                 name={service.icon}
                 class="text-[200px] group-hover:opacity-90 opacity-50 duration-0 text-white absolute -bottom-8 -right-8 rotate-45"
               />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <section class="bg-secondary py-16">
+    <div
+      class="flex items-center justify-center flex-col max-w-screen-xl mx-auto gap-16 px-4"
+    >
+      <div class="flex flex-col items-center gap-8">
+        <h1 class="text-6xl text-center text-white">Community Impact</h1>
+        <h2
+          class="text-xl max-w-2xl w-full text-center font-extralight text-white"
+        >
+          By choosing Elevate Studios, you're not just getting professional
+          media services—you're contributing to a greater cause. Take a look at
+          our outreach programs.
+        </h2>
+      </div>
+      <div
+        class="grid grid-cols-3 gap-16 max-md:grid-cols-1 grid-rows-1 h-full"
+      >
+        {
+          programs.map((program) => (
+            <a
+              href={program.url}
+              class="group flex flex-col gap-8 bg-white p-8 shadow-2xl"
+            >
+              <Image
+                src={program.image}
+                alt={program.name}
+                class="group-hover:scale-105 group-hover:rotate-3 transition-all w-full object-contain aspect-square object-center"
+              />
+              <div class="flex flex-col items-center">
+                <h3 class="text-center text-2xl font-bold">{program.name}</h3>
+                <p class="text-center text-lg font-extralight">
+                  {program.description}
+                </p>
+              </div>
             </a>
           ))
         }
