@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import htmlParser from "../utils/htmlParser";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+import config from "../config.json";
 
 // const landingPageRes = await fetch(
 //   "http://elevate-studios.local/wp-json/wp/v2/pages/8"
@@ -87,14 +88,14 @@ const programs = [
       <h1 class="text-center text-4xl max-w-xl w-full">
         We produce the media so that you can focus on what matters
       </h1>
-      <div class="flex flex-col gap-4 max-w-xs mx-auto">
+      <div class="flex flex-col gap-4 max-w-lg mx-auto">
         {
           services.map((service) => (
             <a
               href={service.url}
-              class={`group hover:bg-accent transition-colors w-full p-4 text-4xl overflow-hidden text-center uppercase relative bg-primary`}
+              class={`group hover:bg-accent transition-colors w-full py-16 px-8 max-md:py-8 text-4xl overflow-hidden text-center uppercase relative bg-primary`}
             >
-              <h1 class="z-10 relative">{service.name}</h1>
+              <h1 class="z-10 relative font-medium">{service.name}</h1>
               <Icon
                 name={service.icon}
                 class="text-[200px] group-hover:opacity-90 opacity-50 duration-0 text-white absolute -bottom-8 -right-8 rotate-45"
@@ -145,4 +146,115 @@ const programs = [
       </div>
     </div>
   </section>
+  <section class="py-16">
+    <div
+      class="grid grid-cols-2 max-md:grid-cols-1 max-w-screen-lg mx-auto px-4 gap-16 max-md:gap-8"
+    >
+      <div class="flex flex-col gap-4 w-full max-md:w-full max-md:order-2">
+        <div class="flex flex-col bg-secondary rounded-2xl p-4 gap-4">
+          <h1 class="text-white text-4xl">Contact</h1>
+          <ul class="text-white text-xl">
+            <li>
+              Phone: <a class="link" href={config.phone.url}
+                >{config.phone.name}</a
+              >
+            </li>
+            <li>
+              Email: <a class="link" href={config.email.url}
+                >{config.email.name}</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="flex flex-col bg-secondary rounded-2xl p-4 gap-4">
+          <h1 class="text-white text-4xl">Address</h1>
+          <ul class="text-white text-xl">
+            <li>
+              {config.address}
+            </li>
+          </ul>
+        </div>
+        <div id="map" class="h-96 w-full"></div>
+      </div>
+      <div class="flex flex-col gap-8">
+        <h1 class="text-6xl">Keen to talk? Lets get it!</h1>
+        <p class="font-light text-2xl">
+          Ready to start your project or have questions about our community
+          programs? Reach out today, and let's elevate our stories together.
+        </p>
+        <form
+          name="contact"
+          data-netlify="true"
+          class="col-span-2 w-full flex flex-col gap-4 max-md:col-span-1"
+        >
+          <div
+            class="grid grid-cols-2 gap-8 max-md:gap-4 w-full max-md:grid-cols-1"
+          >
+            <div class="flex flex-col gap-4">
+              <div class="flex flex-col gap-1">
+                <label class="text-xl">Full Name</label>
+                <label class="input input-bordered flex items-center gap-2">
+                  <Icon name="mdi:user" class="text-3xl" />
+                  <input
+                    type="text"
+                    class="grow"
+                    name="name"
+                    placeholder="Enter your name..."
+                  />
+                </label>
+              </div>
+              <div class="flex flex-col gap-1">
+                <label class="text-xl">Email Address</label>
+                <label class="input input-bordered flex items-center gap-2">
+                  <Icon name="mdi:email" class="text-3xl" />
+                  <input
+                    type="text"
+                    class="grow"
+                    name="email"
+                    placeholder="Enter your email..."
+                  />
+                </label>
+              </div>
+              <div class="flex flex-col gap-1">
+                <label class="text-xl">Phone Number</label>
+                <label class="input input-bordered flex items-center gap-2">
+                  <Icon name="mdi:phone" class="text-3xl" />
+                  <input
+                    type="text"
+                    class="grow"
+                    name="phone"
+                    placeholder="Enter your phone number..."
+                  />
+                </label>
+              </div>
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="text-xl">Message</label>
+              <textarea
+                name="message"
+                class="textarea textarea-bordered h-full w-full resize-none"
+                placeholder="I want to know more about..."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn-accent btn w-fit ml-auto"
+            >Submit</button
+          >
+        </form>
+      </div>
+    </div>
+  </section>
 </Layout>
+
+<script>
+  import L from "leaflet";
+
+  var map = L.map("map").setView([-36.85, 174.74], 15);
+
+  L.marker([-36.85, 174.74]).addTo(map);
+
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+</script>
