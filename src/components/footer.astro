@@ -19,6 +19,18 @@ import { Image } from "astro:assets";
       ))
     }
   </nav>
+  <nav>
+    <h6 class="footer-title">Contact</h6>
+    <p>
+      {config.address}
+    </p>
+    <a href={config.email.url} class="link link-hover">
+      {config.email.name}
+    </a>
+    <a href={config.phone.url} class="link link-hover">
+      {config.phone.name}
+    </a>
+  </nav>
   <nav class="flex flex-col">
     <h6 class="footer-title">Socials</h6>
     <div class="flex gap-2">
