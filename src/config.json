@@ -12,15 +12,19 @@
       "url": "/services"
     },
     {
+      "name": "Our Impact",
+      "url": "/programs"
+    },
+    {
       "name": "Contact",
-      "url": "/contact"
+      "url": "/#contact"
     }
   ],
   "address": "123 Fake St, Auckland",
   "phone": { "name": "0800 2663 473", "url": "tel:+6408002663473" },
   "email": {
-    "name": "jamal.perreira@allfire.co.nz",
-    "url": "mailto:jamal.perreira@allfire.co.nz"
+    "name": "christian@elevatestudios.nz",
+    "url": "mailto:christian@elevatestudios.nz"
   },
   "socials": [
     {

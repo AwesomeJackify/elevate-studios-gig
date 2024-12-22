@@ -59,9 +59,20 @@ const programs = [
 <Layout>
   <section>
     <div
-      class="max-w-screen-2xl mx-auto w-full h-screen flex items-center justify-center flex-col"
+      class="relative max-w-screen-2xl mx-auto w-full h-screen flex items-center justify-center flex-col"
     >
-      <div class="flex flex-col gap-2 items-center text-center text-8xl">
+      <div
+        class="absolute top-0 left-0 w-full h-full bg-black opacity-50 -z-10"
+      >
+      </div>
+      <img
+        src="https://www.podcasts.nz/wp-content/uploads/2022/07/wide-1-scaled.jpg"
+        alt="Elevate Studios"
+        class="absolute top-0 left-0 w-full h-full object-cover -z-20"
+      />
+      <div
+        class="flex flex-col gap-2 items-center text-center text-8xl text-white font-sans uppercase font-extrabold tracking-wide"
+      >
         <h1>Inspire</h1>
         <h1>Create</h1>
         <h1>Innovate</h1>
@@ -146,9 +157,9 @@ const programs = [
       </div>
     </div>
   </section>
-  <section class="py-16">
+  <section class="py-16" id="contact">
     <div
-      class="grid grid-cols-2 max-md:grid-cols-1 max-w-screen-lg mx-auto px-4 gap-16 max-md:gap-8"
+      class="grid grid-cols-2 max-md:grid-cols-1 max-w-screen-xl mx-auto px-4 gap-16 max-md:gap-8"
     >
       <div class="flex flex-col gap-4 w-full max-md:w-full max-md:order-2">
         <div class="flex flex-col bg-secondary rounded-2xl p-4 gap-4">
