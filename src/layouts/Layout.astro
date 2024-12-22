@@ -35,7 +35,9 @@ const { title, isAbsolute } = Astro.props;
   </head>
   <body>
     <Nav client:load isAbsolute={isAbsolute} />
-    <slot />
+    <div class="min-h-screen">
+      <slot />
+    </div>
     <Footer />
   </body>
 </html>
