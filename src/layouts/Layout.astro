@@ -1,5 +1,6 @@
 ---
 import Nav from "../components/Nav";
+import config from "../config.json";
 
 const { title, isAbsolute } = Astro.props;
 ---
@@ -15,6 +16,7 @@ const { title, isAbsolute } = Astro.props;
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={config.description} />
     <title>{title}</title>
 
     <link
