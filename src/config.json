@@ -42,23 +42,5 @@
       "url": "https://www.facebook.com/"
     }
   ],
-  "services": [
-    {
-      "name": "Consultancy",
-      "url": "/services/consultancy"
-    },
-    {
-      "name": "Core drilling",
-      "url": "/services/core-drilling"
-    },
-    {
-      "name": "Acoustic ceiling/detail",
-      "url": "/services/acoustic-ceiling-detail"
-    },
-    {
-      "name": "Passive fire service",
-      "url": "/services/passive-fire-service"
-    }
-  ],
   "reviews": []
 }

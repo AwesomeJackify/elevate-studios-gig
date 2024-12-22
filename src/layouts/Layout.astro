@@ -1,12 +1,13 @@
 ---
 import Nav from "../components/Nav";
 import config from "../config.json";
+import Footer from "../components/footer.astro";
 
 const { title, isAbsolute } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -35,6 +36,7 @@ const { title, isAbsolute } = Astro.props;
   <body>
     <Nav client:load isAbsolute={isAbsolute} />
     <slot />
+    <Footer />
   </body>
 </html>
 

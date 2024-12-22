@@ -82,10 +82,7 @@ const Nav = ({ isAbsolute }: Props) => {
         }  w-full h-full z-50 md:hidden`}
       >
         <div className="flex justify-between items-center py-4 px-4 sticky">
-          <a
-            className="btn btn-ghost btn-lg bg-stone-100 hover:bg-stone-200"
-            href="/"
-          >
+          <a className="btn btn-ghost btn-lg" href="/">
             <img src={logo.src} className="w-full h-full" alt="logo" />
           </a>
           <button className="btn btn-ghost" onClick={toggleTimeline}>

@@ -1,0 +1,37 @@
+---
+import logo from "../assets/images/logo.png";
+import config from "../config.json";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+---
+
+<footer class="footer bg-base-200 text-base-content p-10">
+  <aside>
+    <Image src={logo} alt={config.businessName} class="w-44" />
+  </aside>
+  <nav>
+    <h6 class="footer-title">Main Menu</h6>
+    {
+      config.pages.map((page) => (
+        <a href={page.url} class="link link-hover">
+          {page.name}
+        </a>
+      ))
+    }
+  </nav>
+  <nav class="flex flex-col">
+    <h6 class="footer-title">Socials</h6>
+    <div class="flex gap-2">
+      {
+        config.socials.map((social) => (
+          <a href={social.url} class="link link-hover" target="_blank">
+            <Icon
+              name={social.icon}
+              class="text-4xl hover:text-primary transition-all"
+            />
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</footer>
