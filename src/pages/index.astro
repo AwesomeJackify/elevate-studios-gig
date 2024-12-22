@@ -62,7 +62,8 @@ const programs = [
       class="relative max-w-screen-2xl mx-auto w-full h-screen flex items-center justify-center flex-col"
     >
       <div
-        class="absolute top-0 left-0 w-full h-full bg-black opacity-50 -z-10"
+        id="bg-cover"
+        class="absolute top-0 left-0 w-full h-full bg-black opacity-0 -z-10"
       >
       </div>
       <img
@@ -73,9 +74,9 @@ const programs = [
       <div
         class="flex flex-col gap-2 items-center text-center text-8xl text-white font-sans uppercase font-extrabold tracking-wide"
       >
-        <h1>Inspire</h1>
-        <h1>Create</h1>
-        <h1>Innovate</h1>
+        <h1 class="landing-text opacity-0">Inspire</h1>
+        <h1 class="landing-text opacity-0">Create</h1>
+        <h1 class="landing-text opacity-0">Innovate</h1>
       </div>
     </div>
   </section>
@@ -166,12 +167,12 @@ const programs = [
           <h1 class="text-white text-4xl">Contact</h1>
           <ul class="text-white text-xl">
             <li>
-              Phone: <a class="link" href={config.phone.url}
+              Phone: <a class="link link-hover" href={config.phone.url}
                 >{config.phone.name}</a
               >
             </li>
             <li>
-              Email: <a class="link" href={config.email.url}
+              Email: <a class="link link-hover" href={config.email.url}
                 >{config.email.name}</a
               >
             </li>
@@ -258,6 +259,7 @@ const programs = [
 
 <script>
   import L from "leaflet";
+  import gsap from "gsap";
 
   var map = L.map("map").setView([-36.85, 174.74], 15);
 
@@ -268,4 +270,22 @@ const programs = [
     attribution:
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
+
+  const tl = gsap.timeline();
+  tl.to("#bg-cover", {
+    opacity: 0.5,
+    duration: 1,
+    delay: 0.5,
+  }).fromTo(
+    ".landing-text",
+    {
+      translateY: "-50%",
+    },
+    {
+      translateY: "0",
+      opacity: 1,
+      stagger: 0.3,
+    },
+    "<0.2"
+  );
 </script>

@@ -41,7 +41,7 @@ const Nav = () => {
       <div className="navbar z-50 bg-transparent absolute top-0 left-0 max-md:hidden py-4">
         <div className="navbar-start">
           <a className="btn btn-ghost btn-lg" href="/">
-            <img src={logo.src} className="w-44" alt="logo" />
+            <img src={logo.src} className="w-44 bg-white" alt="logo" />
           </a>
         </div>
         <div className="navbar-center hidden lg:flex text-gray-300">
@@ -59,19 +59,22 @@ const Nav = () => {
           </a> */}
         </div>
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col absolute top-0 left-0 w-full h-full z-50">
         <div className="flex justify-between items-center py-4 px-4 md:hidden sticky">
           <a className="btn btn-ghost btn-lg" href="/">
-            <img src={logo.src} className="w-44" alt="logo" />
+            <img src={logo.src} className="w-44 bg-white" alt="logo" />
           </a>
           <button className="btn btn-ghost" onClick={toggleTimeline}>
             <Icon
               icon={showNav ? "mdi:close" : "mdi:menu"}
-              className="text-5xl"
+              className="text-5xl text-white"
             />
           </button>
         </div>
-        <ul ref={mobileNavRef} className={`flex flex-col overflow-hidden h-0`}>
+        <ul
+          ref={mobileNavRef}
+          className={`flex flex-col overflow-hidden z-50 bg-stone-100 h-0`}
+        >
           {config.pages.map((page, index) => (
             <li key={index} className="py-4 px-8">
               <a className="link link-hover" href={page.url}>

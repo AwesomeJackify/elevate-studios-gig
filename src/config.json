@@ -8,6 +8,10 @@
       "url": "/"
     },
     {
+      "name": "Our Story",
+      "url": "/about-us"
+    },
+    {
       "name": "What We Do",
       "url": "/services"
     },
