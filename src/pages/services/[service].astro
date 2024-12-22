@@ -1,0 +1,16 @@
+---
+export function getStaticPaths() {
+  return [
+    { params: { service: "podcast-production" } },
+    { params: { service: "video-production" } },
+  ];
+}
+
+const { service } = Astro.params;
+
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title={service}>
+  <h1>{service}</h1>
+</Layout>

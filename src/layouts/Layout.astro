@@ -1,5 +1,7 @@
 ---
 import Nav from "../components/Nav";
+
+const { title, isAbsolute } = Astro.props;
 ---
 
 <!doctype html>
@@ -9,7 +11,7 @@ import Nav from "../components/Nav";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>{title}</title>
 
     <link
       rel="stylesheet"
@@ -25,7 +27,7 @@ import Nav from "../components/Nav";
       crossorigin=""></script>
   </head>
   <body>
-    <Nav client:load />
+    <Nav client:load isAbsolute={isAbsolute} />
     <slot />
   </body>
 </html>

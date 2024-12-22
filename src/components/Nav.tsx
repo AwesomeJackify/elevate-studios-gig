@@ -6,7 +6,11 @@ import logo from "../assets/images/logo.png";
 
 import config from "../config.json";
 
-const Nav = () => {
+interface Props {
+  isAbsolute: boolean;
+}
+
+const Nav = ({ isAbsolute }: Props) => {
   const [showNav, setShowNav] = useState(false);
   gsap.registerPlugin(useGSAP);
 
@@ -38,16 +42,29 @@ const Nav = () => {
 
   return (
     <div>
-      <div className="navbar z-50 bg-transparent absolute top-0 left-0 max-md:hidden py-4">
+      <div
+        className={`navbar z-50 ${
+          isAbsolute ? "absolute top-0 left-0 bg-transparent" : "bg-white"
+        } max-md:hidden py-4`}
+      >
         <div className="navbar-start">
           <a className="btn btn-ghost btn-lg" href="/">
-            <img src={logo.src} className="w-44 bg-white" alt="logo" />
+            <img src={logo.src} className="w-full h-full" alt="logo" />
           </a>
         </div>
-        <div className="navbar-center hidden lg:flex text-gray-300">
+        <div
+          className={`navbar-center hidden lg:flex ${
+            isAbsolute ? "text-gray-300" : "text-black"
+          }`}
+        >
           <ul className="menu menu-horizontal px-1">
             {config.pages.map((page, index) => (
-              <li key={index} className="text-xl hover:text-white transition">
+              <li
+                key={index}
+                className={`text-xl ${
+                  isAbsolute ? "hover:text-stone-100" : "hover:text-stone-700"
+                } transition`}
+              >
                 <a href={page.url}>{page.name}</a>
               </li>
             ))}
@@ -59,10 +76,17 @@ const Nav = () => {
           </a> */}
         </div>
       </div>
-      <div className="flex flex-col absolute top-0 left-0 w-full h-full z-50">
-        <div className="flex justify-between items-center py-4 px-4 md:hidden sticky">
-          <a className="btn btn-ghost btn-lg" href="/">
-            <img src={logo.src} className="w-44 bg-white" alt="logo" />
+      <div
+        className={`flex flex-col ${
+          isAbsolute ? "absolute top-0 left-0" : ""
+        }  w-full h-full z-50 md:hidden`}
+      >
+        <div className="flex justify-between items-center py-4 px-4 sticky">
+          <a
+            className="btn btn-ghost btn-lg bg-stone-100 hover:bg-stone-200"
+            href="/"
+          >
+            <img src={logo.src} className="w-full h-full" alt="logo" />
           </a>
           <button className="btn btn-ghost" onClick={toggleTimeline}>
             <Icon

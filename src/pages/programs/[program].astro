@@ -1,0 +1,17 @@
+---
+export function getStaticPaths() {
+  return [
+    { params: { program: "kumete" } },
+    { params: { program: "outsole" } },
+    { params: { program: "elevate" } },
+  ];
+}
+
+const { program } = Astro.params;
+
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title={program}>
+  <h1>{program}</h1>
+</Layout>
