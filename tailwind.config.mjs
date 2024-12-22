@@ -7,7 +7,16 @@ export default {
     extend: {},
   },
   daisyui: {
-    themes: ["cmyk"],
+    themes: [
+      {
+        cmyk: {
+          ...require("daisyui/src/theming/themes")["cmyk"],
+          primary: "#5E17EB",
+          secondary: "#000000",
+          accent: "#F58F29",
+        },
+      },
+    ],
   },
   plugins: [daisyui],
 };
