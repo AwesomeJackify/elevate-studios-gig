@@ -109,7 +109,9 @@ const programs = [
               href={service.url}
               class={`group hover:bg-accent transition-colors w-full py-16 px-8 max-md:py-8 text-4xl overflow-hidden text-center uppercase relative bg-primary`}
             >
-              <h1 class="z-10 relative font-medium">{service.name}</h1>
+              <h1 class="z-10 relative font-medium text-white group-hover:text-black">
+                {service.name}
+              </h1>
               <Icon
                 name={service.icon}
                 class="text-[200px] group-hover:opacity-90 opacity-50 duration-0 text-white absolute -bottom-8 -right-8 rotate-45"
