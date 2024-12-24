@@ -82,7 +82,7 @@ const programs = [
   </section>
   <section class="bg-secondary py-16">
     <div class="max-w-screen-xl mx-auto flex flex-col gap-4 px-4">
-      <h1 class="text-6xl max-md:text-5xl font-bold text-white">
+      <h1 class="text-6xl max-md:text-5xl font-bold text-secondary-content">
         Welcome to <br /> Elevate Studios
       </h1>
       <p class="max-w-3xl text-stone-300">
@@ -105,12 +105,12 @@ const programs = [
               href={service.url}
               class={`group hover:bg-accent transition-colors w-full py-16 px-8 max-md:py-8 text-4xl overflow-hidden text-center uppercase relative bg-primary`}
             >
-              <h1 class="z-10 relative font-medium text-white group-hover:text-black">
+              <h1 class="z-10 relative font-medium text-primary-content group-hover:text-black">
                 {service.name}
               </h1>
               <Icon
                 name={service.icon}
-                class="text-[200px] group-hover:opacity-90 opacity-50 duration-0 text-white absolute -bottom-8 -right-8 rotate-45"
+                class="text-[200px] group-hover:opacity-90 opacity-50 duration-0 text-primary-content absolute -bottom-8 -right-8 rotate-45"
               />
             </a>
           ))
@@ -123,9 +123,11 @@ const programs = [
       class="flex items-center justify-center flex-col max-w-screen-xl mx-auto gap-16 px-4"
     >
       <div class="flex flex-col items-center gap-8">
-        <h1 class="text-6xl text-center text-white">Community Impact</h1>
+        <h1 class="text-6xl text-center text-secondary-content">
+          Community Impact
+        </h1>
         <h2
-          class="text-xl max-w-2xl w-full text-center font-extralight text-white"
+          class="text-xl max-w-2xl w-full text-center font-extralight text-secondary-content"
         >
           By choosing Elevate Studios, you're not just getting professional
           media services—you're contributing to a greater cause. Take a look at
@@ -146,9 +148,9 @@ const programs = [
                 alt={program.name}
                 class="group-hover:scale-105 group-hover:rotate-3 transition-all w-full object-contain aspect-square object-center"
               />
-              <div class="flex flex-col items-center">
-                <h3 class="text-center text-2xl font-bold">{program.name}</h3>
-                <p class="text-center text-lg font-extralight">
+              <div class="flex flex-col items-center gap-2">
+                <h3 class="text-center text-3xl font-bold">{program.name}</h3>
+                <p class="text-center text-md font-extralight">
                   {program.description}
                 </p>
               </div>
@@ -164,8 +166,8 @@ const programs = [
     >
       <div class="flex flex-col gap-4 w-full max-md:w-full max-md:order-2">
         <div class="flex flex-col bg-primary rounded-2xl p-4 gap-4">
-          <h1 class="text-white text-4xl">Contact</h1>
-          <ul class="text-white text-xl">
+          <h1 class="text-primary-content text-4xl">Contact</h1>
+          <ul class="text-primary-content text-xl">
             <li>
               Phone: <a class="link link-hover" href={config.phone.url}
                 >{config.phone.name}</a
@@ -179,8 +181,8 @@ const programs = [
           </ul>
         </div>
         <div class="flex flex-col bg-primary rounded-2xl p-4 gap-4">
-          <h1 class="text-white text-4xl">Address</h1>
-          <ul class="text-white text-xl">
+          <h1 class="text-primary-content text-4xl">Address</h1>
+          <ul class="text-primary-content text-xl">
             <li>
               {config.address}
             </li>
