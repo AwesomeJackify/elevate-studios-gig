@@ -1,6 +1,29 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
 import { Image } from "astro:assets";
+
+const whatMakesUsDifferent = [
+  {
+    name: "We are a Pacific organisation",
+    description:
+      "Our leadership approach, values, philosophies, policies, and operating procedures are reflective of Pacific cultural contexts and worldviews. The Nga Vaka o Kāiga Tapu – Pacific conceptual frameworks guide our culture and practice.",
+  },
+  {
+    name: "We are committed to bicultural and ambicultural practice",
+    description:
+      "We recognise the importance of biculturalism and Te Tiriti in practice. Our team is comfortable in traversing diverse Māori and Pacific perspectives – to reach a shared understanding.",
+  },
+  {
+    name: "We work with demand-side evidence",
+    description:
+      "We work to build real time data, insights, and evidence directly from the communities we work with to deeply understand complex problems.",
+  },
+  {
+    name: "We apply critical thinking",
+    description:
+      "We apply the disciplines of critical thinking, systems thinking and the theory of constraints to identify the primary causes of complex problems.",
+  },
+];
 ---
 
 <PageLayout title="About Us">
@@ -18,8 +41,8 @@ import { Image } from "astro:assets";
         />
         <div class="flex flex-col gap-4">
           <h1 class="font-bold text-4xl">
-            The Cause Collective is a community organisation that aims to create
-            the conditions for communities to thrive from this generation to the
+            Elvate Studios is a community organisation that aims to create the
+            conditions for communities to thrive from this generation to the
             next.
           </h1>
           <p class="text-xl">
@@ -34,6 +57,30 @@ import { Image } from "astro:assets";
             This is achieved by delivering a range of services to communities,
             clinical and provider networks and to our delivery partners.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="max-w-screen-xl mx-auto">
+      <div class="grid-cols-2 grid max-md:grid-cols-1 gap-16">
+        <div class="flex flex-col gap-8 py-16">
+          {
+            whatMakesUsDifferent.map((item, index) => (
+              <div class="flex flex-col gap-1 w-full">
+                <h2 class="font-bold text-2xl text-primary">{item.name}</h2>
+                <p class="text-lg">{item.description}</p>
+              </div>
+              <hr class={`${index == whatMakesUsDifferent.length - 1 ? "hidden" : ""}`} />
+            ))
+          }
+        </div>
+        <div
+          class="bg-primary w-full flex items-center justify-left pl-16 h-full"
+        >
+          <h1 class="text-primary-content text-6xl font-bold w-72">
+            What makes us different?
+          </h1>
         </div>
       </div>
     </div>

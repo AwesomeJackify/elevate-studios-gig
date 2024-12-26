@@ -61,7 +61,7 @@ const Nav = ({ isAbsolute }: Props) => {
             {config.pages.map((page, index) => (
               <li
                 key={index}
-                className={`text-xl ${
+                className={`text-xl font-medium ${
                   isAbsolute ? "hover:text-stone-100" : "hover:text-stone-700"
                 } transition`}
               >
