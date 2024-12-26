@@ -1,5 +1,41 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import { Image } from "astro:assets";
 ---
 
-<Layout title="About Us">About Us</Layout>
+<PageLayout title="About Us">
+  <section>
+    <div class="max-w-screen-2xl mx-auto px-4">
+      <div
+        class="grid grid-cols-2 max-md:grid-cols-1 gap-16 place-items-center"
+      >
+        <Image
+          src="https://thecausecollective.org.nz/wp-content/uploads/2023/11/about_us_team.png"
+          height={500}
+          inferSize
+          alt={"About Us"}
+          class="w-full h-full object-cover"
+        />
+        <div class="flex flex-col gap-4">
+          <h1 class="font-bold text-4xl">
+            The Cause Collective is a community organisation that aims to create
+            the conditions for communities to thrive from this generation to the
+            next.
+          </h1>
+          <p class="text-xl">
+            We want to transform the way in which community and public services
+            are experienced by individuals, families and whole communities.
+          </p>
+          <p class="text-xl">
+            We are a population-focused organisation and have an interest in the
+            overall outcomes of Pacific peoples across Aotearoa, underserved and
+            South Auckland communities. We work upstream to address the causes
+            of complex problems and downstream to strengthen prevention systems.
+            This is achieved by delivering a range of services to communities,
+            clinical and provider networks and to our delivery partners.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

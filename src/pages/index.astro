@@ -72,7 +72,7 @@ const programs = [
         class="absolute top-0 left-0 w-full h-full object-cover -z-20"
       />
       <div
-        class="flex flex-col gap-2 items-center text-center text-8xl max-md:text-6xl text-white font-sans uppercase font-extrabold tracking-wide"
+        class="flex flex-col gap-2 items-center text-center text-8xl max-md:text-6xl text-white font-sans uppercase font-black tracking-wide"
       >
         <h1 class="landing-text opacity-0">Inspire</h1>
         <h1 class="landing-text opacity-0">Create</h1>
@@ -95,7 +95,7 @@ const programs = [
     <div
       class="max-w-screen-2xl mx-auto flex flex-col items-center gap-16 py-32 px-4"
     >
-      <h1 class="text-center text-4xl max-w-xl w-full">
+      <h1 class="text-center text-4xl max-w-xl w-full font-medium">
         We produce the media so that you can focus on what matters
       </h1>
       <div class="flex flex-col gap-4 max-w-lg mx-auto">
@@ -123,7 +123,7 @@ const programs = [
       class="flex items-center justify-center flex-col max-w-screen-xl mx-auto gap-16 px-4"
     >
       <div class="flex flex-col items-center gap-8">
-        <h1 class="text-6xl text-center text-secondary-content">
+        <h1 class="text-6xl text-center text-secondary-content font-bold">
           Community Impact
         </h1>
         <h2
@@ -166,8 +166,8 @@ const programs = [
     >
       <div class="flex flex-col gap-4 w-full max-md:w-full max-md:order-2">
         <div class="flex flex-col bg-primary rounded-2xl p-4 gap-4">
-          <h1 class="text-primary-content text-4xl">Contact</h1>
-          <ul class="text-primary-content text-xl">
+          <h1 class="text-primary-content text-4xl font-bold">Contact</h1>
+          <ul class="text-primary-content text-xl font-medium">
             <li>
               Phone: <a class="link link-hover" href={config.phone.url}
                 >{config.phone.name}</a
@@ -181,8 +181,8 @@ const programs = [
           </ul>
         </div>
         <div class="flex flex-col bg-primary rounded-2xl p-4 gap-4">
-          <h1 class="text-primary-content text-4xl">Address</h1>
-          <ul class="text-primary-content text-xl">
+          <h1 class="text-primary-content text-4xl font-bold">Address</h1>
+          <ul class="text-primary-content text-xl font-medium">
             <li>
               {config.address}
             </li>
@@ -191,7 +191,7 @@ const programs = [
         <div id="map" class="h-96 w-full"></div>
       </div>
       <div class="flex flex-col gap-8">
-        <h1 class="text-6xl">Keen to talk? Lets get it!</h1>
+        <h1 class="text-6xl font-black">Keen to talk? Lets get it!</h1>
         <p class="font-light text-2xl">
           Ready to start your project or have questions about our community
           programs? Reach out today, and let's elevate our stories together.

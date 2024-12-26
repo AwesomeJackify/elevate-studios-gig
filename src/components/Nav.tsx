@@ -44,7 +44,7 @@ const Nav = ({ isAbsolute }: Props) => {
     <div>
       <div
         className={`navbar z-50 ${
-          isAbsolute ? "absolute top-0 left-0 bg-transparent" : "bg-white"
+          isAbsolute ? "absolute top-0 left-0 bg-transparent" : "bg-base-100"
         } max-md:hidden py-4`}
       >
         <div className="navbar-start">
