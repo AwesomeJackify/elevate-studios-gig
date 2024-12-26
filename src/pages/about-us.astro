@@ -27,62 +27,64 @@ const whatMakesUsDifferent = [
 ---
 
 <PageLayout title="About Us">
-  <section>
-    <div class="max-w-screen-2xl mx-auto px-4">
-      <div
-        class="grid grid-cols-2 max-md:grid-cols-1 gap-16 place-items-center"
-      >
-        <Image
-          src="https://thecausecollective.org.nz/wp-content/uploads/2023/11/about_us_team.png"
-          height={500}
-          inferSize
-          alt={"About Us"}
-          class="w-full h-full object-cover"
-        />
-        <div class="flex flex-col gap-4">
-          <h1 class="font-bold text-4xl">
-            Elvate Studios is a community organisation that aims to create the
-            conditions for communities to thrive from this generation to the
-            next.
-          </h1>
-          <p class="text-xl">
-            We want to transform the way in which community and public services
-            are experienced by individuals, families and whole communities.
-          </p>
-          <p class="text-xl">
-            We are a population-focused organisation and have an interest in the
-            overall outcomes of Pacific peoples across Aotearoa, underserved and
-            South Auckland communities. We work upstream to address the causes
-            of complex problems and downstream to strengthen prevention systems.
-            This is achieved by delivering a range of services to communities,
-            clinical and provider networks and to our delivery partners.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section>
-    <div class="max-w-screen-xl mx-auto">
-      <div class="grid-cols-2 grid max-md:grid-cols-1 gap-16">
-        <div class="flex flex-col gap-8 py-16">
-          {
-            whatMakesUsDifferent.map((item, index) => (
-              <div class="flex flex-col gap-1 w-full">
-                <h2 class="font-bold text-2xl text-primary">{item.name}</h2>
-                <p class="text-lg">{item.description}</p>
-              </div>
-              <hr class={`${index == whatMakesUsDifferent.length - 1 ? "hidden" : ""}`} />
-            ))
-          }
-        </div>
+  <div class="flex flex-col max-md:gap-8 mb-16 ">
+    <section>
+      <div class="max-w-screen-2xl mx-auto px-4">
         <div
-          class="bg-primary w-full flex items-center justify-left pl-16 h-full"
+          class="grid grid-cols-2 max-md:grid-cols-1 gap-16 place-items-center"
         >
-          <h1 class="text-primary-content text-6xl font-bold w-72">
-            What makes us different?
-          </h1>
+          <Image
+            src="https://thecausecollective.org.nz/wp-content/uploads/2023/11/about_us_team.png"
+            height={500}
+            inferSize
+            alt={"About Us"}
+            class="w-full h-full object-cover"
+          />
+          <div class="flex flex-col gap-4">
+            <h1 class="font-bold text-4xl">
+              Elvate Studios is a community organisation that aims to create the
+              conditions for communities to thrive from this generation to the
+              next.
+            </h1>
+            <p class="text-xl">
+              We want to transform the way in which community and public services
+              are experienced by individuals, families and whole communities.
+            </p>
+            <p class="text-xl">
+              We are a population-focused organisation and have an interest in the
+              overall outcomes of Pacific peoples across Aotearoa, underserved and
+              South Auckland communities. We work upstream to address the causes
+              of complex problems and downstream to strengthen prevention systems.
+              This is achieved by delivering a range of services to communities,
+              clinical and provider networks and to our delivery partners.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <section>
+      <div class="max-w-screen-xl mx-auto px-4">
+        <div class="grid-cols-2 grid max-md:grid-cols-1 gap-16">
+          <div class="flex flex-col max-md:order-2 gap-8 py-16 max-md:py-0">
+            {
+              whatMakesUsDifferent.map((item, index) => (
+                <div class="flex flex-col gap-1 w-full">
+                  <h2 class="font-bold text-2xl text-primary">{item.name}</h2>
+                  <p class="text-lg">{item.description}</p>
+                </div>
+                <hr class={`${index == whatMakesUsDifferent.length - 1 ? "hidden" : ""}`} />
+              ))
+            }
+          </div>
+          <div
+            class="bg-primary w-full flex items-center justify-left md:pl-16 h-full max-md:py-16 max-md:px-8"
+          >
+            <h1 class="text-primary-content text-6xl max-md:text-5xl font-bold md:w-72">
+              What makes us different?
+            </h1>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </PageLayout>

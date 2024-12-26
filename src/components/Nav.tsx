@@ -88,7 +88,7 @@ const Nav = ({ isAbsolute }: Props) => {
           <button className="btn btn-ghost" onClick={toggleTimeline}>
             <Icon
               icon={showNav ? "mdi:close" : "mdi:menu"}
-              className="text-5xl text-white"
+              className="text-5xl text-black"
             />
           </button>
         </div>
