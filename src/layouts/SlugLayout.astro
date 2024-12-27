@@ -1,5 +1,5 @@
 ---
-import PageLayout from "./PageLayout.astro";
+import Layout from "./Layout.astro";
 const { name, description, featuredImage } = Astro.props;
 import { Image } from "astro:assets";
 
@@ -8,7 +8,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 );
 ---
 
-<PageLayout title={name}>
+<Layout title={name} isAbsolute={false}>
   <section class="flex flex-col">
     <div class="h-[calc(80dvh)] max-md:h-96 overflow-hidden">
       <Image
@@ -25,4 +25,4 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       <p class="font-light">{description}</p>
     </div>
   </section>
-</PageLayout>
+</Layout>
