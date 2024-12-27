@@ -1,0 +1,28 @@
+---
+import PageLayout from "./PageLayout.astro";
+const { name, description, featuredImage } = Astro.props;
+import { Image } from "astro:assets";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/**/*.{jpeg,jpg,png,gif,webp}"
+);
+---
+
+<PageLayout title={name}>
+  <section class="flex flex-col">
+    <div class="h-[calc(80dvh)] max-md:h-96 overflow-hidden">
+      <Image
+        src={images["/src/assets/images/" + featuredImage]()}
+        alt={name}
+        class="object-cover h-full w-full"
+      />
+    </div>
+  </section>
+  <section class="max-w-screen-xl mx-auto flex flex-col py-16 px-4 gap-8">
+    <h1 class="text-6xl">{name}</h1>
+    <div class="flex flex-col max-w-2xl gap-1">
+      <h1 class="text-xl underline">Description</h1>
+      <p class="font-light">{description}</p>
+    </div>
+  </section>
+</PageLayout>

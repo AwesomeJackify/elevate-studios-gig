@@ -10,50 +10,7 @@ import config from "../config.json";
 // );
 // const landingPage = await landingPageRes.json();
 
-const services = [
-  {
-    name: "Podcast Production",
-    description:
-      "From concept development to final editing, we help bring your voice to life. Whether you’re a seasoned podcaster or just starting out, we provide the tools and expertise you need to create engaging audio and video content.",
-    icon: "mdi:podcast",
-    url: "/services/podcast-production",
-  },
-  {
-    name: "Video Production",
-    description:
-      "Our team specializes in crafting visually compelling stories that resonate with audiences. We work with you to create videos that capture your vision, whether for promotional content, educational purposes, or community engagement.",
-    icon: "mdi:video",
-    url: "/services/video-production",
-  },
-];
-
-import outsoleLogo from "../assets/images/outsole.png";
-import kumeteLogo from "../assets/images/kumete.png";
-import elevateLogo from "../assets/images/elevate.png";
-
-const programs = [
-  {
-    name: "Outsole",
-    description:
-      "Empowering local artists and creators through workshops and mentorship opportunities.",
-    image: outsoleLogo,
-    url: "/programs/outsole",
-  },
-  {
-    name: "Kumete",
-    description:
-      "Supporting sustainable practices in our community through educational initiatives and collaborative projects.",
-    image: kumeteLogo,
-    url: "/programs/kumete",
-  },
-  {
-    name: "Elevate",
-    description:
-      "Providing resources and platforms for underrepresented voices, ensuring everyone has the opportunity to share their story.",
-    image: elevateLogo,
-    url: "/programs/elevate",
-  },
-];
+import programs from "../data/programs.ts";
 ---
 
 <Layout title={config.businessName} isAbsolute>
@@ -100,7 +57,7 @@ const programs = [
       </h1>
       <div class="flex flex-col gap-4 max-w-lg mx-auto">
         {
-          services.map((service) => (
+          config.services.map((service) => (
             <a
               href={service.url}
               class={`group hover:bg-accent transition-colors w-full py-16 px-8 max-md:py-8 text-4xl overflow-hidden text-center uppercase relative bg-primary`}

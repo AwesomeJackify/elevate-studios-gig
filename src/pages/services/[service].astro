@@ -7,10 +7,19 @@ export function getStaticPaths() {
 }
 
 const { service } = Astro.params;
+import { getEntry } from "astro:content";
 
-import Layout from "../../layouts/Layout.astro";
+const currentServiceEntry = await getEntry("services", service);
+if (!currentServiceEntry) {
+  return Astro.redirect("/");
+}
+const data = currentServiceEntry.data;
+
+import SlugLayout from "../../layouts/SlugLayout.astro";
 ---
 
-<Layout title={service}>
-  <h1>{service}</h1>
-</Layout>
+<SlugLayout
+  name={data.name}
+  description={data.description}
+  featuredImage={data.featuredImage}
+/>

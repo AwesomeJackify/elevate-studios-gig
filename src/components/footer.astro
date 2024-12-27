@@ -3,6 +3,7 @@ import logo from "../assets/images/logo.png";
 import config from "../config.json";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+import astroLogo from "../assets/images/AstroMediaLogo.svg";
 ---
 
 <footer class="footer bg-base-200 text-base-content p-10">
@@ -45,5 +46,20 @@ import { Image } from "astro:assets";
         ))
       }
     </div>
+  </nav>
+  <nav class="flex flex-col justify-end h-full">
+    <p class="flex items-center gap-1 max-md:self-center">
+      Made possible by <a
+        href="https://astromedia.dev"
+        class="link hover:text-primary transition-colors"
+        target="_blank">Astro Media</a
+      ><Image
+        class="w-5"
+        src={astroLogo}
+        width={10}
+        height={10}
+        alt="digital agency"
+      />
+    </p>
   </nav>
 </footer>

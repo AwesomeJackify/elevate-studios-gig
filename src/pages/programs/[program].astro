@@ -9,9 +9,19 @@ export function getStaticPaths() {
 
 const { program } = Astro.params;
 
-import Layout from "../../layouts/Layout.astro";
+import { getEntry } from "astro:content";
+
+const currentProgramEntry = await getEntry("programs", program);
+if (!currentProgramEntry) {
+  return Astro.redirect("/");
+}
+const data = currentProgramEntry.data;
+
+import SlugLayout from "../../layouts/SlugLayout.astro";
 ---
 
-<Layout title={program}>
-  <h1>{program}</h1>
-</Layout>
+<SlugLayout
+  name={data.name}
+  description={data.description}
+  featuredImage={data.featuredImage}
+/>
