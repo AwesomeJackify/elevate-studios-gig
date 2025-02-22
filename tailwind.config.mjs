@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Kabel", ...defaultTheme.fontFamily.sans],
+        blacky: ["Blacky", ...defaultTheme.fontFamily.sans],
+        sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
       },
     },
   },
@@ -16,13 +17,24 @@ export default {
       {
         cmyk: {
           ...require("daisyui/src/theming/themes")["cmyk"],
-          primary: "#5E17EB",
+          primary: "#2E1A47",
           "primary-content": "#ffffff",
           secondary: "#000000",
           "secondary-content": "#ffffff",
-          accent: "#F58F29",
+          accent: "#2A2A2A",
+          "accent-content": "#ffffff",
         },
       },
+      // {
+      //   cmyk: {
+      //     ...require("daisyui/src/theming/themes")["cmyk"],
+      //     primary: "#5E17EB",
+      //     "primary-content": "#ffffff",
+      //     secondary: "#000000",
+      //     "secondary-content": "#ffffff",
+      //     accent: "#F58F29",
+      //   },
+      // },
     ],
   },
   plugins: [daisyui],

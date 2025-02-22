@@ -1,9 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import htmlParser from "../utils/htmlParser";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { Resize } from "@cloudinary/url-gen/actions";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import config from "../config.json";
+import servicesBG from "../assets/images/services/servicesBG.jpg";
+
+import { getImage } from "astro:assets";
+
+const servicesBGImage = await getImage({ src: servicesBG });
 
 // const landingPageRes = await fetch(
 //   "http://elevate-studios.local/wp-json/wp/v2/pages/8"
@@ -11,25 +18,39 @@ import config from "../config.json";
 // const landingPage = await landingPageRes.json();
 
 import programs from "../data/programs.ts";
+
+const cld = new Cloudinary({
+  cloud: {
+    cloudName: import.meta.env.CLOUDINARY_CLOUD_NAME,
+  },
+});
+
+const introVideo = cld.video("hero");
+const introVideoURL = introVideo.toURL();
 ---
 
 <Layout title={config.businessName} isAbsolute>
   <section>
     <div
-      class="relative max-w-screen-2xl mx-auto w-full h-screen flex items-center justify-center flex-col"
+      class="relative mx-auto w-full h-screen flex items-center justify-center flex-col"
     >
       <div
         id="bg-cover"
-        class="absolute top-0 left-0 w-full h-full bg-black opacity-0 -z-10"
+        class="absolute top-0 left-0 w-full h-full bg-gradient-to-b to-black from-gray-900 from-10% opacity-0 -z-10"
       >
       </div>
-      <img
-        src="https://www.podcasts.nz/wp-content/uploads/2022/07/wide-1-scaled.jpg"
-        alt="Elevate Studios"
+      <video
+        id="introVideo"
+        autoplay
+        loop
+        muted
+        playsinline
         class="absolute top-0 left-0 w-full h-full object-cover -z-20"
-      />
+      >
+        <source src={introVideoURL} type="video/mp4" />
+      </video>
       <div
-        class="flex flex-col gap-2 items-center text-center text-8xl max-md:text-6xl text-white font-sans uppercase font-black tracking-wide"
+        class="flex flex-col gap-2 items-center text-center text-8xl max-md:text-6xl text-white font-[Blacky] uppercase font-black tracking-wide max-w-screen-2xl mx-auto"
       >
         <h1 class="landing-text opacity-0">Inspire</h1>
         <h1 class="landing-text opacity-0">Create</h1>
@@ -48,11 +69,18 @@ import programs from "../data/programs.ts";
       <a href="/about-us" class="btn btn-lg w-fit btn-accent">Learn More</a>
     </div>
   </section>
-  <section>
+  <section
+    class="relative bg-cover bg-center bg-fixed"
+    style={`background-image: url(${servicesBGImage.src});`}
+  >
+    <div
+      class="bg-gradient-to-b from-transparent to-primary absolute top-0 left-0 w-full h-full opacity-100"
+    >
+    </div>
     <div
       class="max-w-screen-2xl mx-auto flex flex-col items-center gap-16 py-32 px-4"
     >
-      <h1 class="text-center text-4xl max-w-xl w-full font-medium">
+      <h1 class="text-center text-4xl max-w-xl w-full font-medium text-white">
         We produce the media so that you can focus on what matters
       </h1>
       <div class="flex flex-col gap-4 max-w-lg mx-auto">
@@ -62,12 +90,12 @@ import programs from "../data/programs.ts";
               href={service.url}
               class={`group hover:bg-accent transition-colors w-full py-16 px-8 max-md:py-8 text-4xl overflow-hidden text-center uppercase relative bg-primary`}
             >
-              <h1 class="z-10 relative font-medium text-primary-content group-hover:text-black">
+              <h1 class="z-10 relative font-medium text-primary-content group-hover:text-accent-content">
                 {service.name}
               </h1>
               <Icon
                 name={service.icon}
-                class="text-[200px] group-hover:opacity-90 opacity-50 duration-0 text-primary-content absolute -bottom-8 -right-8 rotate-45"
+                class="text-[150px] group-hover:opacity-90 opacity-50 duration-300 text-primary-content absolute -bottom-8 -right-8 rotate-45"
               />
             </a>
           ))
@@ -232,7 +260,7 @@ import programs from "../data/programs.ts";
 
   const tl = gsap.timeline();
   tl.to("#bg-cover", {
-    opacity: 0.5,
+    opacity: 0.8,
     duration: 1,
     delay: 0.5,
   }).fromTo(
