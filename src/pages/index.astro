@@ -36,7 +36,7 @@ const introVideoURL = introVideo.toURL();
     >
       <div
         id="bg-cover"
-        class="absolute top-0 left-0 w-full h-full bg-gradient-to-b to-black from-gray-900 from-10% opacity-0 -z-10"
+        class="absolute top-0 left-0 w-full h-full bg-gradient-to-b to-black from-transparent from-10% opacity-0 -z-10"
       >
       </div>
       <video
@@ -147,14 +147,14 @@ const introVideoURL = introVideo.toURL();
       </div>
     </div>
   </section>
-  <section class="py-16" id="contact">
+  <section class="py-16 bg-primary" id="contact">
     <div
       class="grid grid-cols-2 max-md:grid-cols-1 max-w-screen-xl mx-auto px-4 gap-16 max-md:gap-8"
     >
       <div class="flex flex-col gap-4 w-full max-md:w-full max-md:order-2">
-        <div class="flex flex-col bg-primary rounded-2xl p-4 gap-4">
-          <h1 class="text-primary-content text-4xl font-bold">Contact</h1>
-          <ul class="text-primary-content text-xl font-medium">
+        <div class="flex flex-col bg-base-100 rounded-2xl p-4 gap-4">
+          <h1 class="text-base-content text-4xl font-bold">Contact</h1>
+          <ul class="text-base-content text-xl font-medium">
             <li>
               Phone: <a class="link link-hover" href={config.phone.url}
                 >{config.phone.name}</a
@@ -167,9 +167,9 @@ const introVideoURL = introVideo.toURL();
             </li>
           </ul>
         </div>
-        <div class="flex flex-col bg-primary rounded-2xl p-4 gap-4">
-          <h1 class="text-primary-content text-4xl font-bold">Address</h1>
-          <ul class="text-primary-content text-xl font-medium">
+        <div class="flex flex-col bg-base-100 rounded-2xl p-4 gap-4">
+          <h1 class="text-base-content text-4xl font-bold">Address</h1>
+          <ul class="text-base-content text-xl font-medium">
             <li>
               {config.address}
             </li>
@@ -177,7 +177,7 @@ const introVideoURL = introVideo.toURL();
         </div>
         <div id="map" class="h-96 w-full"></div>
       </div>
-      <div class="flex flex-col gap-8">
+      <div class="flex flex-col gap-8 text-base-200">
         <h1 class="text-6xl font-black">Keen to talk? Lets get it!</h1>
         <p class="font-light text-2xl">
           Ready to start your project or have questions about our community
