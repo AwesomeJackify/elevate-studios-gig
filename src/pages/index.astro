@@ -85,12 +85,12 @@ const introVideoURL = introVideo.toURL();
       >
         We produce the media so that you can focus on what matters
       </h1>
-      <div class="flex flex-row gap-8 mx-auto">
+      <div class="flex flex-row max-md:flex-col max-md:gap-2 gap-8 mx-auto">
         {
           config.services.map((service) => (
             <a
               href={service.url}
-              class={`group transition-colors w-full py-4 px-8 max-md:py-8 text-3xl overflow-hidden text-center uppercase relative items-center flex flex-col gap-2`}
+              class={`group transition-colors w-full py-4 px-8 max-md:p-2 text-3xl overflow-hidden text-center uppercase relative items-center flex flex-col gap-2`}
             >
               <h1 class="z-10 relative font-bold text-primary-content whitespace-pre-line">
                 {service.name}
@@ -114,7 +114,7 @@ const introVideoURL = introVideo.toURL();
           Community Impact
         </h1>
         <h2
-          class="text-4xl max-w-2xl w-full text-center font-extralight text-secondary-content"
+          class="text-4xl max-md:text-2xl max-w-2xl w-full text-center font-extralight text-secondary-content"
         >
           By choosing Elevate Studios, you're not just getting professional
           media services—you're contributing to a greater cause. Take a look at
@@ -126,11 +126,14 @@ const introVideoURL = introVideo.toURL();
       >
         {
           programs.map((program) => (
-            <a href={program.url} class="group flex flex-col gap-8 p-8">
+            <a
+              href={program.url}
+              class="group flex flex-col gap-8 p-8 max-md:py-2"
+            >
               <Image
                 src={program.image}
                 alt={program.name}
-                class="group-hover:scale-105 group-hover:rotate-3 transition-all w-full object-contain aspect-square object-center "
+                class="group-hover:scale-105 group-hover:rotate-3 transition-all w-full object-contain aspect-square object-center"
               />
               <div class="flex flex-col items-center gap-2 p-4 text-primary-content h-full ">
                 <h3 class="text-center text-5xl font-bold">{program.name}</h3>
