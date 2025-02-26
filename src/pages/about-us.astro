@@ -2,6 +2,8 @@
 import PageLayout from "../layouts/PageLayout.astro";
 import { Image } from "astro:assets";
 
+import ourImpactImg14 from "../assets/images/our-impact/ourImpact14.jpeg";
+
 const whatMakesUsDifferent = [
   {
     name: "Establish Elevate Studios as a leading media company",
@@ -29,14 +31,12 @@ const whatMakesUsDifferent = [
           class="grid grid-cols-2 max-md:grid-cols-1 gap-16 place-items-center"
         >
           <Image
-            src="https://thecausecollective.org.nz/wp-content/uploads/2023/11/about_us_team.png"
-            height={500}
-            inferSize
+            src={ourImpactImg14}
             alt={"About Us"}
             class="w-full h-full object-cover"
           />
           <div class="flex flex-col gap-4 text-secondary-content">
-            <h1 class="font-bold text-4xl">
+            <h1 class="font-bold text-xl">
               Elevate Studios has a unique story. We're building a sustainable model to fund our community outreach programs. To continue serving the families and communities we care about, we've created a future-proof product in an industry that's only set to grow.
             </h1>
             <p class="text-xl">
