@@ -16,10 +16,10 @@ if (!currentServiceEntry) {
 }
 const data = currentServiceEntry.data;
 
-import SlugLayout from "../../layouts/SlugLayout.astro";
+import DetailedLayout from "../../layouts/DetailedLayout.astro";
 ---
 
-<SlugLayout
+<DetailedLayout
   name={data.name}
   description={data.description}
   featuredImage={data.featuredImage}
