@@ -4,6 +4,8 @@ import kumeteLogo from "../assets/images/programs/kumete/kumeteLogo.png";
 import elevateLogo from "../assets/images/programs/elevate/elevateLogo.png";
 
 import outsoleImg1 from "../assets/images/programs/outsole/outsole1.jpg";
+import elevateImg1 from "../assets/images/programs/elevate/elevate1.jpg";
+import kumeteImg1 from "../assets/images/programs/kumete/kumete1.jpeg";
 
 const programs = [
   {
@@ -19,7 +21,7 @@ const programs = [
     description:
       "Supporting sustainable practices in our community through educational initiatives and collaborative projects.",
     logo: kumeteLogo,
-    image: kumeteLogo,
+    image: kumeteImg1,
     url: "/programs/kumete",
   },
   {
@@ -27,7 +29,7 @@ const programs = [
     description:
       "Providing resources and platforms for underrepresented voices, ensuring everyone has the opportunity to share their story.",
     logo: elevateLogo,
-    image: elevateLogo,
+    image: elevateImg1,
     url: "/programs/elevate",
   },
 ];
