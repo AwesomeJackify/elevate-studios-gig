@@ -19,6 +19,27 @@ const servicesBGImage = await getImage({ src: servicesBG });
 
 import programs from "../data/programs.ts";
 
+const needs = [
+  {
+    name: "Podcast",
+  },
+  {
+    name: "Media",
+  },
+];
+
+const businessTypes = [
+  {
+    name: "Personal Brand",
+  },
+  {
+    name: "Corporate",
+  },
+  {
+    name: "Podcast",
+  },
+];
+
 const cld = new Cloudinary({
   cloud: {
     cloudName: import.meta.env.CLOUDINARY_CLOUD_NAME,
@@ -211,6 +232,48 @@ const introVideoURL = introVideo.toURL();
                   />
                 </label>
               </div>
+              <div class="flex flex-col gap-1">
+                <label class="text-xl"
+                  >What services are you interested in?</label
+                >
+                <div class="flex flex-wrap gap-2">
+                  {
+                    needs.map((need) => (
+                      <label class="inline-flex items-center">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-secondary"
+                          value={need.name}
+                        />
+                        <span class="ml-2 text-primary-content">
+                          {need.name}
+                        </span>
+                      </label>
+                    ))
+                  }
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <label class="text-xl">Business Type</label>
+                <div class="flex flex-wrap gap-2">
+                  {
+                    businessTypes.map((businessType) => (
+                      <div class="form-control">
+                        <label class="label cursor-pointer gap-2">
+                          <input
+                            type="radio"
+                            name="radio"
+                            class="radio radio-secondary"
+                          />
+                          <span class="label-text text-primary-content">
+                            {businessType.name}
+                          </span>
+                        </label>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
             </div>
             <div class="flex flex-col gap-1">
               <label class="text-xl">Message</label>
@@ -244,18 +307,19 @@ const introVideoURL = introVideo.toURL();
 </Layout>
 
 <script>
-  import L from "leaflet";
   import gsap from "gsap";
 
-  var map = L.map("map").setView([-36.85, 174.74], 15);
+  // import L from "leaflet";
 
-  L.marker([-36.85, 174.74]).addTo(map);
+  // var map = L.map("map").setView([-36.85, 174.74], 15);
 
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution:
-      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-  }).addTo(map);
+  // L.marker([-36.85, 174.74]).addTo(map);
+
+  // L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  //   maxZoom: 19,
+  //   attribution:
+  //     '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  // }).addTo(map);
 
   const tl = gsap.timeline();
   tl.to("#bg-cover", {
