@@ -44,7 +44,7 @@ const Nav = ({ isAbsolute }: Props) => {
     <div>
       <div
         className={`navbar z-50 ${
-          isAbsolute ? "absolute top-0 left-0 bg-transparent" : "bg-base-100"
+          isAbsolute ? "absolute top-0 left-0 bg-transparent" : "bg-secondary"
         } max-md:hidden py-4`}
       >
         <div className="navbar-start">
@@ -54,7 +54,7 @@ const Nav = ({ isAbsolute }: Props) => {
         </div>
         <div
           className={`navbar-center hidden lg:flex ${
-            isAbsolute ? "text-gray-300" : "text-black"
+            isAbsolute ? "text-gray-300" : "text-secondary-content"
           }`}
         >
           <ul className="menu menu-horizontal px-1">
@@ -62,7 +62,9 @@ const Nav = ({ isAbsolute }: Props) => {
               <li
                 key={index}
                 className={`text-xl font-medium ${
-                  isAbsolute ? "hover:text-stone-100" : "hover:text-stone-700"
+                  isAbsolute
+                    ? "hover:text-stone-100"
+                    : "hover:text-secondary-content/80"
                 } transition`}
               >
                 <a href={page.url}>{page.name}</a>
@@ -83,12 +85,12 @@ const Nav = ({ isAbsolute }: Props) => {
       >
         <div className="flex justify-between items-center py-4 px-4 sticky">
           <a className="btn btn-ghost btn-lg" href="/">
-            <img src={logo.src} className="w-full h-full" alt="logo" />
+            <img src={logo.src} className="w-24" alt="logo" />
           </a>
           <button className="btn btn-ghost" onClick={toggleTimeline}>
             <Icon
               icon={showNav ? "mdi:close" : "mdi:menu"}
-              className="text-5xl text-black"
+              className="text-5xl text-base-100"
             />
           </button>
         </div>

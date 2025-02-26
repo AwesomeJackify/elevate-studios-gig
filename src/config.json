@@ -12,6 +12,10 @@
       "url": "/about-us"
     },
     {
+      "name": "Our Team",
+      "url": "/our-team"
+    },
+    {
       "name": "What We Do",
       "url": "/services"
     },
@@ -60,7 +64,7 @@
       "name": "Content\nCreation",
       "description": "Our team specializes in crafting visually compelling stories that resonate with audiences. We work with you to create videos that capture your vision, whether for promotional content, educational purposes, or community engagement.",
       "icon": "mdi:monitor-cellphone-star",
-      "url": "/services/video-production"
+      "url": "/services/content-creation"
     }
   ]
 }

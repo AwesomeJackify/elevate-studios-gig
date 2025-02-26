@@ -1,5 +1,9 @@
 ---
 name: Podcast Production
-description: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi voluptates molestias sequi deserunt corrupti magnam nihil itaque nemo maiores. Distinctio, rerum. Sunt natus vitae, dolore at, quidem minima qui fugiat nobis quae consectetur tempore saepe expedita ducimus odit iste excepturi ut nulla tenetur veniam. Consequatur ratione cupiditate enim reiciendis, odit impedit amet illum. Unde ipsam explicabo nostrum earum commodi sapiente ut. Assumenda sapiente soluta ratione commodi. Rerum itaque aliquid ad pariatur numquam excepturi aspernatur. Et, doloremque numquam officiis eos doloribus exercitationem perferendis quasi placeat, nam velit magni rerum nesciunt quibusdam provident inventore culpa ex? Sequi eos magnam tenetur impedit non.rem
+description:
+  Step into our state-of-the-art studio, equipped with multiple sets designed to meet all your podcasting needs. From concept to completion, our team of expert videographers and audio engineers ensure every detail is perfectly executed. With specialised professionals dedicated to their craft, we guarantee high-quality production that elevates your content.
+
+
+  We shoot in stunning 4K, delivering crystal-clear visuals and professionally engineered audio, perfect for social media clips that captivate and engage your audience. Boost your business, personal brand and presence, driving meaningful interaction with expertly crafted content that speaks to your brand.
 featuredImage: services/podcast-production.jpg
 ---
