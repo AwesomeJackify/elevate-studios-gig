@@ -14,7 +14,7 @@ const programs = [
       "Empowering local artists and creators through workshops and mentorship opportunities.",
     logo: outsoleLogo,
     image: outsoleImg1,
-    url: "/programs/outsole",
+    url: "/programs",
   },
   {
     name: "Kumete",
@@ -22,7 +22,7 @@ const programs = [
       "Supporting sustainable practices in our community through educational initiatives and collaborative projects.",
     logo: kumeteLogo,
     image: kumeteImg1,
-    url: "/programs/kumete",
+    url: "/programs",
   },
   {
     name: "Elevate",
@@ -30,7 +30,7 @@ const programs = [
       "Providing resources and platforms for underrepresented voices, ensuring everyone has the opportunity to share their story.",
     logo: elevateLogo,
     image: elevateImg1,
-    url: "/programs/elevate",
+    url: "/programs",
   },
 ];
 
