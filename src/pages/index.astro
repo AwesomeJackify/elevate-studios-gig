@@ -8,6 +8,8 @@ import { Image } from "astro:assets";
 import config from "../config.json";
 import servicesBG from "../assets/images/services/servicesBG.jpg";
 
+import services from "../data/services";
+
 import { getImage } from "astro:assets";
 
 const servicesBGImage = await getImage({ src: servicesBG });
@@ -108,7 +110,7 @@ const introVideoURL = introVideo.toURL();
       </h1>
       <div class="flex flex-row max-md:flex-col max-md:gap-2 gap-8 mx-auto">
         {
-          config.services.map((service) => (
+          services.map((service) => (
             <a
               href={service.url}
               class={`group transition-colors w-full py-4 px-8 max-md:p-2 text-3xl overflow-hidden text-center uppercase relative items-center flex flex-col gap-2`}

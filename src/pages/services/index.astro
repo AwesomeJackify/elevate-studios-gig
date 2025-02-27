@@ -2,36 +2,64 @@
 import PageLayout from "../../layouts/PageLayout.astro";
 import config from "../../config.json";
 import { Icon } from "astro-icon/components";
+import services from "../../data/services";
 ---
 
 <PageLayout title="Services">
-  <section>
-    <div
-      class="max-w-screen-2xl mx-auto flex flex-col items-center gap-16 py-32 px-4"
-    >
-      <h1
-        class="text-center text-4xl max-w-xl w-full font-medium text-secondary-content"
-      >
-        We produce the media so that you can focus on what matters
-      </h1>
-      <div class="flex flex-col gap-4 max-w-lg mx-auto">
-        {
-          config.services.map((service) => (
-            <a
-              href={service.url}
-              class={`group hover:bg-accent transition-colors w-full py-16 px-8 max-md:py-8 text-4xl overflow-hidden text-center uppercase relative bg-primary`}
-            >
-              <h1 class="z-10 relative font-medium text-primary-content group-hover:text-black">
-                {service.name}
-              </h1>
-              <Icon
-                name={service.icon}
-                class="text-[200px] group-hover:opacity-90 opacity-50 duration-0 text-primary-content absolute -bottom-8 -right-8 rotate-45"
-              />
-            </a>
-          ))
-        }
+  <div class="flex flex-col py-32 max-md:py-16 gap-32 max-md:gap-16">
+    <section class="px-4">
+      <div class="max-w-screen-2xl mx-auto flex flex-col items-center gap-16">
+        <h1
+          class="text-center text-4xl max-w-xl w-full font-medium text-secondary-content"
+        >
+          We produce the media so that you can focus on what matters
+        </h1>
       </div>
-    </div>
-  </section>
+    </section>
+    <section>
+      <div>
+        <div
+          class="max-w-screen-2xl mx-auto px-4 flex flex-col gap-32 max-md:gap-16"
+        >
+          {
+            services.map((service, index) => (
+              <div class="grid grid-cols-2 max-md:grid-cols-1 gap-16 place-items-center">
+                <video
+                  loop
+                  autoplay
+                  muted
+                  playsinline
+                  controls
+                  class={`w-full h-full object-cover ${index % 2 == 0 ? "md:order-2" : ""}`}
+                >
+                  <source src={service.videoUrl} type="video/mp4" />
+                </video>
+                <div class={`flex flex-col gap-4 text-secondary-content`}>
+                  <h1 class="font-bold text-xl">
+                    Elvate Studios is a community organisation that aims to
+                    create the conditions for communities to thrive from this
+                    generation to the next.
+                  </h1>
+                  <p class="text-xl">
+                    We want to transform the way in which community and public
+                    services are experienced by individuals, families and whole
+                    communities.
+                  </p>
+                  <p class="text-xl">
+                    We are a population-focused organisation and have an
+                    interest in the overall outcomes of Pacific peoples across
+                    Aotearoa, underserved and South Auckland communities. We
+                    work upstream to address the causes of complex problems and
+                    downstream to strengthen prevention systems. This is
+                    achieved by delivering a range of services to communities,
+                    clinical and provider networks and to our delivery partners.
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
 </PageLayout>
