@@ -11,7 +11,7 @@ const introVideoURL = introVideo.toURL();
 const services = [
   {
     name: "Podcast\nProduction",
-    description: "From concept development to final editing, we help bring your voice to life. Whether you're a seasoned podcaster or just starting out, we provide the tools and expertise you need to create engaging audio and video content.",
+    description: "From concept development to final editing, we help bring your voice to life. Whether you’re a seasoned podcaster or just starting out, we provide the tools and expertise you need to create engaging audio and video content.",
     icon: "mdi:podcast",
     url: "/services/podcast-production",
     videoUrl: cld.video("services/podcast").toURL()
