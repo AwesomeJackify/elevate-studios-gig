@@ -69,7 +69,7 @@ const Nav = ({ isAbsolute }: Props) => {
             ))}
           </ul>
         </div>
-        <div className="navbar-end max-lg:hidden">
+        <div className="navbar-end max-xl:hidden">
           {/* <a href={config.bookingLink} className="btn btn-primary text-white">
             Call Us Today
           </a> */}
