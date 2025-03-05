@@ -103,12 +103,12 @@ const introVideoURL = introVideo.toURL();
     >
     </div>
     <div
-      class="max-w-screen-2xl mx-auto flex flex-col items-center gap-16 py-32 px-4"
+      class="max-w-screen-2xl mx-auto flex flex-col items-center gap-16 py-72 px-4"
     >
       <h1
-        class="text-center text-4xl max-w-xl w-full font-medium text-primary-content z-50"
+        class="text-center text-4xl 2xl:text-6xl w-full font-medium text-primary-content z-50"
       >
-        We produce the media so that you can focus on what matters
+        We produce the media <br /> so that you can focus on what matters
       </h1>
       <div class="flex flex-row max-md:flex-col max-md:gap-2 gap-8 mx-auto">
         {
@@ -117,7 +117,7 @@ const introVideoURL = introVideo.toURL();
               href={service.url}
               class={`group transition-colors w-full py-4 px-8 max-md:p-2 overflow-hidden text-center uppercase relative items-center flex flex-col gap-2`}
             >
-              <h1 class="z-10 relative font-bold text-primary-content whitespace-pre-line">
+              <h1 class="z-10 2xl:text-2xl relative font-bold text-primary-content whitespace-pre-line">
                 {service.name}
               </h1>
               <Icon
