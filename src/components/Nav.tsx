@@ -49,7 +49,7 @@ const Nav = ({ isAbsolute }: Props) => {
       >
         <div className="navbar-start">
           <a className="btn btn-ghost btn-lg" href="/">
-            <img src={logo.src} className="h-full w-full" alt="logo" />
+            <img src={logo.src} className="w-32" alt="logo" />
           </a>
         </div>
         <div
