@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 import Layout from "../layouts/Layout.astro";
 import htmlParser from "../utils/htmlParser";
 import { Cloudinary } from "@cloudinary/url-gen";
@@ -48,7 +50,7 @@ const cld = new Cloudinary({
   },
 });
 
-const introVideo = cld.video("hero");
+const introVideo = cld.video("hero2");
 const introVideoURL = introVideo.toURL();
 ---
 
