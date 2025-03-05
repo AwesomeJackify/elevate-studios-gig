@@ -10,9 +10,9 @@ import services from "../../data/services";
     <section class="px-4">
       <div class="max-w-screen-2xl mx-auto flex flex-col items-center gap-16">
         <h1
-          class="text-center text-4xl max-w-xl w-full font-medium text-secondary-content"
+          class="text-center text-6xl max-md:text-4xl w-full font-medium text-secondary-content"
         >
-          We produce the media so that you can focus on what matters
+          We produce the media so that <br />you can focus on what matters.
         </h1>
       </div>
     </section>
@@ -34,7 +34,10 @@ import services from "../../data/services";
                 >
                   <source src={service.videoUrl} type="video/mp4" />
                 </video>
-                <div class={`flex flex-col gap-4 text-secondary-content`}>
+                <div
+                  class={`flex flex-col gap-8 max-md:gap-4 text-secondary-content`}
+                >
+                  <h1 class="text-6xl font-bold">{service.name}</h1>
                   <p class="text-xl whitespace-pre-line">
                     {service.description}
                   </p>

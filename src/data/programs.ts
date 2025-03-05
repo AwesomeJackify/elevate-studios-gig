@@ -4,7 +4,7 @@ import kumeteLogo from "../assets/images/programs/kumete/kumeteLogo.png";
 import elevateLogo from "../assets/images/programs/elevate/elevateLogo.png";
 
 import outsoleImg1 from "../assets/images/programs/outsole/outsole1.jpg";
-import elevateImg1 from "../assets/images/programs/elevate/elevate1.jpg";
+import elevateImg1 from "../assets/images/programs/elevate/elevate1.jpeg";
 import kumeteImg1 from "../assets/images/programs/kumete/kumete1.jpeg";
 
 const programs = [
@@ -66,19 +66,11 @@ const programs = [
     secondarySummary: "We believe that financial literacy is a fundamental skill that can transform lives. Our mission is to equip individuals and families with the knowledge and tools they need to navigate their financial journeys confidently. By fostering a culture of learning and support, we aim to create a resilient community where everyone can thrive.",
     topics: [
       {
-        title: "Training",
-        description: "We provide tailored workshops and courses designed to enhance financial knowledge and skills. Participants learn about budgeting, saving, and managing expenses effectively."
-      },
-      {
-        title: "Employment Support",
-        description: "We assist individuals in building their resumes, preparing for interviews, and developing job-seeking strategies to secure stable employment."
-      },
-      {
         title: "Business Acumen",
         description: "For aspiring entrepreneurs, we offer guidance on starting and managing a business, covering essential topics such as business planning, financing, and marketing."
       },
       {
-        title: "General Financial Literacy",
+        title: "Financial Literacy",
         description: "Our sessions cover fundamental concepts such as understanding credit, loans, and investments, empowering participants to make informed financial decisions."
       },
       {

@@ -18,7 +18,6 @@ import ourImpactImg11 from "../../assets/images/our-impact/ourImpact11.jpeg";
 import ourImpactImg12 from "../../assets/images/our-impact/ourImpact12.jpeg";
 import ourImpactImg13 from "../../assets/images/our-impact/ourImpact13.jpeg";
 import ourImpactImg14 from "../../assets/images/our-impact/ourImpact14.jpeg";
-import ourImpactImg15 from "../../assets/images/our-impact/ourImpact15.jpeg";
 
 const carousel = [
   ourImpactImg1,
@@ -35,7 +34,6 @@ const carousel = [
   ourImpactImg12,
   ourImpactImg13,
   ourImpactImg14,
-  ourImpactImg15,
 ];
 ---
 
@@ -106,16 +104,14 @@ const carousel = [
       </div>
     </section>
     <section>
-      <div
-        class="carousel carousel-center w-full h-[640px] max-md:h-96 space-x-4"
-      >
+      <div class="carousel carousel-center w-full 2xl:h-[500px] h-96 space-x-4">
         {
           carousel.map((img, i) => (
             <div class="carousel-item">
               <Image
                 src={img}
-                alt="work image"
-                class="object-cover w-full aspect-square"
+                alt={`work image ${i}`}
+                class="object-cover h-full w-96 2xl:w-[500px]"
               />
             </div>
           ))
