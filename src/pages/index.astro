@@ -133,9 +133,9 @@ const podcastVideoURL = podcastVideo.toURL();
       </div>
     </div>
   </section>
-  <section class="bg-secondary py-16">
+  <section class="bg-secondary">
     <div
-      class="flex items-center justify-center flex-col max-w-screen-2xl mx-auto gap-16 max-md:gap-8 px-4 py-16"
+      class="flex items-center justify-center flex-col max-w-screen-2xl mx-auto gap-16 max-md:gap-8 px-4 py-32 max-md:py-16"
     >
       <div class="grid grid-cols-2 max-md:grid-cols-1 gap-16 max-md:gap-8">
         <div class="flex flex-col gap-16 max-md:gap-8">
@@ -144,7 +144,9 @@ const podcastVideoURL = podcastVideo.toURL();
           >
             Auckland's Premier <br />Podcast Studio
           </h1>
-          <p class="text-secondary-content grid place-content-center text-2xl">
+          <p
+            class="text-secondary-content grid place-content-center text-2xl max-md:text-md"
+          >
             Ready to grow your brand, expand your business, or share your
             expertise? It's time to press record. At Elevate Studios, we provide
             a premium podcasting space where you can craft a custom set that
@@ -169,7 +171,7 @@ const podcastVideoURL = podcastVideo.toURL();
         <Image
           src={podcastImg}
           alt="Podcast Studio"
-          class="w-full aspect-[16/7] object-cover"
+          class="w-full aspect-[16/7] max-md:aspect-square object-cover"
         />
       </div>
     </div>
