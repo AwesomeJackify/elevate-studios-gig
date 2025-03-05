@@ -86,25 +86,18 @@ const carousel = [
                   class={`w-full h-full object-cover ${index % 2 == 0 ? "md:order-2" : ""}`}
                 />
                 <div class={`flex flex-col gap-4 text-secondary-content`}>
-                  <h1 class="font-bold text-xl">
-                    Elvate Studios is a community organisation that aims to
-                    create the conditions for communities to thrive from this
-                    generation to the next.
-                  </h1>
-                  <p class="text-xl">
-                    We want to transform the way in which community and public
-                    services are experienced by individuals, families and whole
-                    communities.
-                  </p>
-                  <p class="text-xl">
-                    We are a population-focused organisation and have an
-                    interest in the overall outcomes of Pacific peoples across
-                    Aotearoa, underserved and South Auckland communities. We
-                    work upstream to address the causes of complex problems and
-                    downstream to strengthen prevention systems. This is
-                    achieved by delivering a range of services to communities,
-                    clinical and provider networks and to our delivery partners.
-                  </p>
+                  <h1 class="font-bold text-xl">{program.mainHeading}</h1>
+                  <p class="text-lg">{program.mainSummary}</p>
+                  <h1 class="font-bold text-xl">{program.secondaryHeading}</h1>
+                  <p class="text-lg">{program.secondarySummary}</p>
+                  <ul class="list-disc">
+                    {program.topics.map((topic) => (
+                      <li class="ml-8">
+                        <span class="font-bold text-sm">{topic.title}:</span>
+                        {topic.description}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))
