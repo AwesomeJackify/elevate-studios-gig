@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 import Layout from "../layouts/Layout.astro";
 import htmlParser from "../utils/htmlParser";
 import { Cloudinary } from "@cloudinary/url-gen";
@@ -7,10 +9,10 @@ import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import config from "../config.json";
 import servicesBG from "../assets/images/services/servicesBG.jpg";
-
 import services from "../data/services";
-
 import { getImage } from "astro:assets";
+
+import podcastImg from "../assets/images/hero/podcast.jpg";
 
 const servicesBGImage = await getImage({ src: servicesBG });
 
@@ -48,8 +50,11 @@ const cld = new Cloudinary({
   },
 });
 
-const introVideo = cld.video("hero");
+const introVideo = cld.video("hero2");
 const introVideoURL = introVideo.toURL();
+
+const podcastVideo = cld.video("premierepodcast");
+const podcastVideoURL = podcastVideo.toURL();
 ---
 
 <Layout title={config.businessName} isAbsolute>
@@ -101,12 +106,12 @@ const introVideoURL = introVideo.toURL();
     >
     </div>
     <div
-      class="max-w-screen-2xl mx-auto flex flex-col items-center gap-16 py-32 px-4"
+      class="max-w-screen-2xl mx-auto flex flex-col items-center gap-16 2xl:py-72 py-32 px-4"
     >
       <h1
-        class="text-center text-4xl max-w-xl w-full font-medium text-primary-content z-50"
+        class="text-center text-4xl 2xl:text-6xl w-full font-medium text-primary-content z-50"
       >
-        We produce the media so that you can focus on what matters
+        We produce the media <br /> so that you can focus on what matters.
       </h1>
       <div class="flex flex-row max-md:flex-col max-md:gap-2 gap-8 mx-auto">
         {
@@ -115,7 +120,7 @@ const introVideoURL = introVideo.toURL();
               href={service.url}
               class={`group transition-colors w-full py-4 px-8 max-md:p-2 overflow-hidden text-center uppercase relative items-center flex flex-col gap-2`}
             >
-              <h1 class="z-10 relative font-bold text-primary-content whitespace-pre-line">
+              <h1 class="z-10 2xl:text-2xl relative font-bold text-primary-content whitespace-pre-line">
                 {service.name}
               </h1>
               <Icon
@@ -128,61 +133,51 @@ const introVideoURL = introVideo.toURL();
       </div>
     </div>
   </section>
-  <section class="bg-secondary py-16">
+  <section class="bg-secondary">
     <div
-      class="flex items-center justify-center flex-col max-w-screen-2xl mx-auto gap-16 px-4"
+      class="flex items-center justify-center flex-col max-w-screen-2xl mx-auto gap-16 max-md:gap-8 px-4 py-32 max-md:py-16"
     >
-      <div class="flex flex-col items-center gap-8">
-        <h1 class="text-6xl text-center text-secondary-content font-bold">
-          Community Impact
-        </h1>
-        <h2
-          class="text-4xl max-md:text-2xl max-w-2xl w-full text-center font-extralight text-secondary-content"
+      <div class="grid grid-cols-2 max-md:grid-cols-1 gap-16 max-md:gap-8">
+        <div class="flex flex-col gap-16 max-md:gap-8">
+          <h1
+            class="2xl:text-8xl text-6xl font-bold text-secondary-content self-start"
+          >
+            Auckland's Premier <br />Podcast Studio
+          </h1>
+          <p
+            class="text-secondary-content grid place-content-center text-2xl max-md:text-md"
+          >
+            Ready to grow your brand, expand your business, or share your
+            expertise? It's time to press record. At Elevate Studios, we provide
+            a premium podcasting space where you can craft a custom set that
+            sets you apart. Create a high-quality podcast that positions you as
+            an industry leader and makes a lasting impact. <br /><br />Let's
+            make your voice heard—book your session today!
+          </p>
+        </div>
+        <video
+          id="podcastVideo"
+          autoplay
+          loop
+          muted
+          playsinline
+          controls
+          class="w-full h-full object-cover"
         >
-          By choosing Elevate Studios, you're not just getting professional
-          media services—you're contributing to a greater cause. Take a look at
-          our outreach programs.
-        </h2>
+          <source src={podcastVideoURL} type="video/mp4" />
+        </video>
       </div>
-      <div
-        class="grid grid-cols-3 gap-16 max-md:grid-cols-1 grid-rows-1 h-full"
-      >
-        {
-          programs.map((program) => (
-            <a
-              href={program.url}
-              class="group flex flex-col gap-8 p-8 max-md:py-2"
-            >
-              <Image
-                src={program.logo}
-                alt={program.name}
-                class="group-hover:scale-105 group-hover:rotate-3 transition-all w-full object-contain aspect-square object-center"
-              />
-              <div class="flex flex-col items-center gap-2 p-4 text-primary-content h-full ">
-                <h3 class="text-center text-5xl font-bold">{program.name}</h3>
-                <p class="text-center text-xl font-extralight">
-                  {program.description}
-                </p>
-              </div>
-            </a>
-          ))
-        }
+      <div class="overflow-hidden">
+        <Image
+          src={podcastImg}
+          alt="Podcast Studio"
+          class="w-full aspect-[16/7] max-md:aspect-square object-cover"
+        />
       </div>
     </div>
   </section>
   <section class="py-16 bg-primary" id="contact">
     <div class="flex flex-col max-w-screen-xl mx-auto px-4 gap-16 max-md:gap-8">
-      <div class="flex flex-col gap-4 w-full max-md:w-full max-md:order-2">
-        <!-- <div class="flex flex-col bg-base-100 rounded-2xl p-4 gap-4">
-          <h1 class="text-base-content text-4xl font-bold">Address</h1>
-          <ul class="text-base-content text-xl font-medium">
-            <li>
-              {config.address}
-            </li>
-          </ul>
-        </div> -->
-        <!-- <div id="map" class="h-96 w-full"></div> -->
-      </div>
       <div class="flex flex-col gap-8 text-base-200">
         <h1 class="text-6xl font-black">Keen to talk? Lets get it!</h1>
         <p class="font-light text-2xl">
@@ -293,7 +288,7 @@ const introVideoURL = introVideo.toURL();
           >
         </form>
         <div class="flex flex-col rounded-2xl gap-4">
-          <ul class="text-base-100 text-xl">
+          <!-- <ul class="text-base-100 text-xl">
             <li>
               Phone: <a class="link link-hover" href={config.phone.url}
                 >{config.phone.name}</a
@@ -304,7 +299,7 @@ const introVideoURL = introVideo.toURL();
                 >{config.email.name}</a
               >
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>

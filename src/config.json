@@ -1,7 +1,7 @@
 {
   "businessName": "Elevate Studios",
   "bookingLink": "",
-  "description": "Based in the heart of Tamaki Makaurau, Elevate Studios is your go-to media company specializing in high-quality podcast and video production. We believe in the power of storytelling to inspire and connect communities, and that's why every project we undertake is driven by our commitment to making a positive impact.",
+  "description": "Based in the heart of Tamaki Makaurau, Elevate Studios is your go-to media company specialising in high-quality podcast and video production. We believe in the power of storytelling to inspire and connect communities, and that's why every project we undertake is driven by our commitment to making a positive impact.",
   "pages": [
     {
       "name": "Home",
@@ -10,10 +10,6 @@
     {
       "name": "Our Story",
       "url": "/about-us"
-    },
-    {
-      "name": "Our Team",
-      "url": "/our-team"
     },
     {
       "name": "What We Do",
@@ -39,6 +35,21 @@
       "name": "instagram",
       "icon": "mdi:instagram",
       "url": "https://www.instagram.com/elevatestudios_nz"
+    },
+    {
+      "name": "linkedin",
+      "icon": "mdi:linkedin",
+      "url": "https://www.linkedin.com/company/elevate-studios-nz/"
+    },
+    {
+      "name": "youtube",
+      "icon": "mdi:youtube",
+      "url": "https://www.youtube.com/@ElevateStudios_NZ"
+    },
+    {
+      "name": "tiktok",
+      "icon": "ic:baseline-tiktok",
+      "url": "https://www.tiktok.com/@elevatestudios_nz?is_from_webapp=1&sender_device=pc"
     }
   ],
   "reviews": []
