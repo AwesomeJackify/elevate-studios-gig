@@ -16,7 +16,7 @@ const services = [
     icon: "mdi:podcast",
     url: "/services",
     videoUrl: cld.video("ElevateMedia_26022025_WebsiteVideo_25fps_16x9_PodcastPage_V1_sti35w").videoEdit(trim().duration("15.0"))
-      .delivery(quality(80))
+      // .delivery(quality(80))
       .toURL(),
   },
   {
@@ -26,7 +26,7 @@ const services = [
     icon: "mdi:video",
     url: "/services",
     videoUrl: cld.video("ElevateMedia_26022025_WebsiteVideo_25fps_16x9_VideoProduction_V1_k4weg7").videoEdit(trim().duration("15.0"))
-      .delivery(quality(80))
+      // .delivery(quality(80))
       .toURL(),
   },
   {
@@ -36,7 +36,7 @@ const services = [
     icon: "mdi:monitor-cellphone-star",
     url: "/services",
     videoUrl: cld.video("ElevateMedia_26022025_WebsiteVideo_25fps_16x9_CommunityPage_V1_yuxa66").videoEdit(trim().duration("15.0"))
-      .delivery(quality(80))
+      // .delivery(quality(80))
       .toURL(),
   },
 ];
