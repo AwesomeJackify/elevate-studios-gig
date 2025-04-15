@@ -5,6 +5,8 @@ import Layout from "../layouts/Layout.astro";
 import htmlParser from "../utils/htmlParser";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { Resize } from "@cloudinary/url-gen/actions";
+import { quality } from "@cloudinary/url-gen/actions/delivery";
+import { trim } from "@cloudinary/url-gen/actions/videoEdit";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import config from "../config.json";
@@ -50,11 +52,19 @@ const cld = new Cloudinary({
   },
 });
 
-const introVideo = cld.video("hero2");
-const introVideoURL = introVideo.toURL();
+const introVideo = cld.video(
+  "ElevateMedia_26022025_WebsiteVideo_25fps_16x9_MainPage_V3_IG_y17epb"
+);
+const introVideoURL = introVideo
+  .videoEdit(trim().duration("15.0"))
+  .delivery(quality(80))
+  .toURL();
 
 const podcastVideo = cld.video("premierepodcast");
-const podcastVideoURL = podcastVideo.toURL();
+const podcastVideoURL = podcastVideo
+  .videoEdit(trim().duration("15.0"))
+  .delivery(quality(80))
+  .toURL();
 ---
 
 <Layout title={config.businessName} isAbsolute>
