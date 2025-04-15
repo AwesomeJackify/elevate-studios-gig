@@ -43,8 +43,9 @@ const Nav = ({ isAbsolute }: Props) => {
   return (
     <div>
       <div
-        className={`navbar z-50 ${isAbsolute ? "absolute top-0 left-0 bg-transparent" : "bg-secondary"
-          } max-md:hidden py-4`}
+        className={`navbar z-50 ${
+          isAbsolute ? "absolute top-0 left-0 bg-transparent" : "bg-secondary"
+        } max-md:hidden py-4`}
       >
         <div className="navbar-start">
           <a className="btn btn-ghost btn-lg" href="/">
@@ -52,17 +53,19 @@ const Nav = ({ isAbsolute }: Props) => {
           </a>
         </div>
         <div
-          className={`navbar-center ${isAbsolute ? "text-gray-300" : "text-secondary-content"
-            }`}
+          className={`navbar-center ${
+            isAbsolute ? "text-gray-300" : "text-secondary-content"
+          }`}
         >
           <ul className="menu menu-horizontal px-1">
             {config.pages.map((page, index) => (
               <li
                 key={index}
-                className={`text-xl max-lg:text-sm font-medium ${isAbsolute
-                  ? "hover:text-stone-100"
-                  : "hover:text-secondary-content/80"
-                  } transition`}
+                className={`text-xl max-lg:text-sm font-medium ${
+                  isAbsolute
+                    ? "hover:text-stone-100"
+                    : "hover:text-secondary-content/80"
+                } transition`}
               >
                 <a href={page.url}>{page.name}</a>
               </li>
@@ -76,8 +79,9 @@ const Nav = ({ isAbsolute }: Props) => {
         </div>
       </div>
       <div
-        className={`flex flex-col ${isAbsolute ? "absolute top-0 left-0" : ""
-          }  w-full h-full z-50 md:hidden`}
+        className={`flex flex-col ${
+          isAbsolute ? "absolute top-0 left-0" : ""
+        }  w-full h-full z-50 md:hidden`}
       >
         <div className="flex justify-between items-center py-4 px-4 sticky">
           <a className="btn btn-ghost btn-lg" href="/">
